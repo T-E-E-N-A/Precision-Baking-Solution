@@ -139,6 +139,9 @@ main #hero{
     font-size: 30px;
     font-weight: 600;
     padding: 2.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
 }
 .btn{
     background-color: blue;
@@ -146,7 +149,6 @@ main #hero{
     border: 1px solid black;
     border-radius: 8px;
     padding: 0.8rem;
-    margin: 5rem;
     font-size: 20px;
 }
 
@@ -185,6 +187,37 @@ img{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.89);
 }
 
+/* Media query for smaller screen sizes */
+@media screen and (max-width: 768px) {
+    .btn {
+        margin: 1rem;
+        padding: 0.5rem;
+        font-size: 16px;
+        display: block;
+        width: 80%;
+        text-align: center;
+    }
+    .head2{
+        font-size: 34px;
+        padding: 1rem 0 1rem 0;
+    }
+    .head3{
+        font-size: 25px;
+        padding: 1.5rem;
+    }
+    #cards{
+        padding: 0;
+    }
+    .box{
+        margin: 8px;
+    }
+    .card{
+        margin: 0;
+    }
+    img{
+        width: 240px;
+    }
+}
 
 
 

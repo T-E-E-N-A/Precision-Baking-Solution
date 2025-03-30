@@ -1,16 +1,154 @@
+
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.5s ease-in-out;
+    background: black;
+}
+
+/* Background Video */
+#bgVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Glassmorphism Container */
+.container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
     text-align: center;
+    width: 45vw;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* backdrop-filter: blur(10px); */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
 }
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 15px 35px rgba(255, 255, 255, 0.3);
+}
+
+/* Heading Styling */
+h1 {
+    color: black;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.38);
+}
+
+/* Input & Button Styling */
 input, button {
-    margin: 10px;
-    padding: 10px;
+    /* display: flex;
+    flex-direction: column;
+    gap: 3px; */
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    transition: all 0.3s ease;
 }
-#recipe {
-    margin-top: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
+
+input {
+    background: rgba(255, 255, 255, 0.2);
+    color: black;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    outline: none;
+    font-weight: 800;
+}
+
+input::placeholder {
+    color: rgba(101, 44, 11, 0.7);
+}
+
+button {
+    background: linear-gradient(135deg, #ff5f6d, #ffc371);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Recipe Page */
+#recipe-container {
     display: none;
+    text-align: center;
+    width: 50vw;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    position: relative;
+    /* backdrop-filter: blur(10px); */
+    overflow-y: auto;
+    max-height: 90vh; /* Adjust based on the viewport height */
+    scrollbar-width: none;
+}
+@media screen and (max-width: 900px) {
+    #recipe-container {
+        width: 90vw; /* Adjust container size for smaller screens */
+        padding: 20px; /* Reduce padding */
+    }
+
+    .button-class { /* Replace with the actual class of the button */
+        display: block; /* Ensure visibility */
+        position: fixed; /* or relative, depending on design needs */
+        bottom: 10px; /* Adjust position if it's at the bottom */
+    }
+}
+
+
+#recipe-container h2 {
+    color: #ff6347;
+    font-size: 36px;
+}
+
+#recipe-container ul {
     text-align: left;
+}
+
+/* Dark Overlay for Readability */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+    display: none;
+}
+
+/* Go Back Button */
+#backButton {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+#backButton:hover {
+    transform: scale(1.05);
 }

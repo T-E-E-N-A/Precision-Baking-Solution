@@ -7,23 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Recipe Generator</h1>
-    <label for="dish">Enter Dish Name:</label>
-    <input type="text" id="dish" placeholder="e.g., Pasta">
-    <br>
-    <label for="servings">Enter Servings:</label>
-    <input type="number" id="servings" min="1" placeholder="e.g., 2">
-    <br>
-    <button onclick="fetchRecipe()">Get Recipe</button>
-    
-    <div id="recipe">
-        <h2 id="recipe-title"></h2>
-        <h3>Ingredients:</h3>
-        <ul id="ingredients"></ul>
-        <h3>Steps to Prepare:</h3>
-        <ul id="steps"></ul>
+    <!-- Background Video (only for the main page) -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="background-video.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <!-- Dark Overlay (used for better contrast on the recipe page) -->
+    <div id="overlay"></div>
+
+    <!-- Main Page (Recipe Search) -->
+    <div id="main-container" class="container">
+        <h1>Recipe Generator</h1>
+        <input type="text" id="dish" placeholder="Enter Dish Name (e.g., Pasta)">
+        <input type="number" id="servings" min="1" placeholder="Enter Servings">
+        <button onclick="fetchRecipe()">Get Recipe</button>
     </div>
 
+    <!-- Recipe Page (Hidden Initially) -->
+    <div id="recipe-container">
+        <h2 id="recipe-title"></h2>
+        <h3>Ingredients:</h3>
+        <p id="ingredients"></p>
+        <h3>Steps to Prepare:</h3>
+        <ul id="steps"></ul>
+        <button id="backButton" onclick="goBack()">Go Back</button>
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
